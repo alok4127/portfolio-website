@@ -1,51 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alok Ramteke | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alok Ramteke | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
-
 <body>
 
-<nav class="navbar">
-    <div class="logo">Alok.</div>
+<header class="navbar">
+
+    <div class="logo">
+        Alok.
+    </div>
 
     <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-</nav>
+
+</header>
 
 <section id="home" class="hero">
 
     <div class="hero-content">
 
-        <h1>Hi, I'm Alok Ramteke</h1>
-
-        <h2>
+        <p class="hero-subtitle">
             Computer Science Engineering Student
-        </h2>
+        </p>
 
-        <p>
-            Aspiring Full-Stack Developer | AI & ML Enthusiast
+        <h1>
+            Hi, I'm <span>Alok Ramteke</span>
+        </h1>
+
+        <p class="hero-description">
+
+            Aspiring Full-Stack Developer passionate about Artificial
+            Intelligence, Software Engineering, Startups and building
+            impactful technology solutions.
+
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#projects" class="btn">
+            <a href="#projects" class="btn-primary">
                 View Projects
             </a>
 
-            <a href="#contact" class="btn-outline">
+            <a href="#contact" class="btn-secondary">
                 Contact Me
+            </a>
+
+        </div>
+
+        <div class="social-icons">
+
+            <a href="https://www.linkedin.com/in/alok-ramteke-921401345/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="https://github.com/alok4127" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="mailto:alokramteke.work@gmail.com">
+                <i class="fas fa-envelope"></i>
             </a>
 
         </div>
@@ -56,19 +87,45 @@
 
 <section id="about">
 
-    <h2 class="section-title">
-        About Me
-    </h2>
+    <h2 class="section-title">About Me</h2>
 
-    <div class="about-content">
+    <div class="card">
 
         <p>
-            I am a Computer Science Engineering student at SRM Institute of Science and Technology.
-            I enjoy building software, exploring artificial intelligence,
-            solving technical problems, and working on innovative projects.
 
-            My interests include Full Stack Development, Machine Learning,
-            Databases, Startups, and Product Development.
+            I am a Computer Science Engineering student at
+            SRM Institute of Science and Technology.
+
+            My interests include Full Stack Development,
+            Artificial Intelligence, Machine Learning,
+            Databases, Product Development and Startups.
+
+            I enjoy solving real-world problems through
+            technology and continuously learning new tools,
+            frameworks and development practices.
+
+        </p>
+
+    </div>
+
+</section>
+
+<section id="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <div class="card">
+
+        <h3>
+            Business Development Intern | SpazorLabs
+        </h3>
+
+        <p>
+
+            Working on B2B outreach, prospect research,
+            lead generation, client engagement and helping
+            technology companies scale engineering teams.
+
         </p>
 
     </div>
@@ -77,9 +134,7 @@
 
 <section id="skills">
 
-    <h2 class="section-title">
-        Skills
-    </h2>
+    <h2 class="section-title">Skills</h2>
 
     <div class="skills-grid">
 
@@ -94,6 +149,7 @@
         <div class="skill-card">Git</div>
         <div class="skill-card">DBMS</div>
         <div class="skill-card">Machine Learning</div>
+        <div class="skill-card">Problem Solving</div>
 
     </div>
 
@@ -109,33 +165,40 @@
 
         <div class="project-card">
 
-            <h3>E-Sports Tournament Management System</h3>
+            <h3>
+                E-Sports Tournament Management System
+            </h3>
 
             <p>
-                Database Management System project for managing tournaments,
-                teams, players, and match scheduling.
+                Database-driven platform for managing teams,
+                tournaments, schedules and match results.
             </p>
 
         </div>
 
         <div class="project-card">
 
-            <h3>AI-Driven Personalized Finance Insights Engine</h3>
+            <h3>
+                AI-Driven Personalised Finance Insights Engine
+            </h3>
 
             <p>
-                Fintech project leveraging AI and Open Banking concepts
-                to generate personalized financial recommendations.
+                Fintech project focused on personalized
+                financial recommendations using AI and
+                Open Banking concepts.
             </p>
 
         </div>
 
         <div class="project-card">
 
-            <h3>Notes Application</h3>
+            <h3>
+                Notes Application
+            </h3>
 
             <p>
-                Full-stack CRUD application for managing notes
-                using modern web technologies.
+                Full-stack CRUD application for creating,
+                updating and managing notes efficiently.
             </p>
 
         </div>
@@ -150,14 +213,14 @@
         Contact
     </h2>
 
-    <div class="contact-box">
+    <div class="card contact-card">
 
         <p>
             Email:
             alokramteke.work@gmail.com
         </p>
 
-        <div class="social-links">
+        <div class="social-icons">
 
             <a href="https://www.linkedin.com/in/alok-ramteke-921401345/" target="_blank">
                 <i class="fab fa-linkedin"></i>
@@ -172,6 +235,14 @@
     </div>
 
 </section>
+
+<footer>
+
+    <p>
+        © 2026 Alok Ramteke | Portfolio
+    </p>
+
+</footer>
 
 <button id="scrollTopBtn">
     ↑
