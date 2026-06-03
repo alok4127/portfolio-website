@@ -1,22 +1,24 @@
 const btn = document.getElementById("scrollTopBtn");
 
-window.onscroll = function () {
+window.onscroll = () => {
 
-    if (
-        document.body.scrollTop > 300 ||
-        document.documentElement.scrollTop > 300
-    ) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
+if (
+document.body.scrollTop > 300 ||
+document.documentElement.scrollTop > 300
+){
+btn.style.display = "block";
+}
+else{
+btn.style.display = "none";
+}
+
 };
 
-btn.addEventListener("click", () => {
+btn.addEventListener("click",()=>{
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 });
