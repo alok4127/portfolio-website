@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alok Ramteke — Portfolio</title>
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="portfolio-root">
+
+  <div class="bg-grid"></div>
+  <div class="hero-glow"></div>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <button class="logo" data-scroll="home">Alok</button>
+      <nav class="nav-links">
+        <button class="nav-link" data-scroll="home">Home</button>
+        <button class="nav-link" data-scroll="about">About</button>
+        <button class="nav-link" data-scroll="timeline">Journey</button>
+        <button class="nav-link" data-scroll="skills">Skills</button>
+        <button class="nav-link" data-scroll="projects">Projects</button>
+        <button class="nav-link" data-scroll="contact">Contact</button>
+      </nav>
+      <button class="nav-mobile-btn" id="navMobileBtn">Menu</button>
+    </div>
+    <div id="navMobileMenu" style="display:none; border-top:1px solid var(--border); background: var(--bg-secondary);">
+      <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="home">Home</button>
+      <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="about">About</button>
+      <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="timeline">Journey</button>
+      <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="skills">Skills</button>
+      <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="projects">Projects</button>
+      <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="contact">Contact</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-name">Hi, I'm <span>Alok Ramteke</span></h1>
+        <p class="hero-headline">Aspiring Full-Stack Developer</p>
+        <p class="hero-desc">
+          Passionate about Artificial Intelligence, Software Engineering, and
+          Startups — I build technology solutions that are thoughtful,
+          functional, and made to last.
+        </p>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" data-scroll="projects">
+            View Projects
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+          <button class="btn btn-secondary" data-scroll="contact">Contact Me</button>
+        </div>
+
+        <div class="social-row">
+          <a class="social-icon" href="https://www.linkedin.com/in/alok-ramteke-921401345/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a class="social-icon" href="https://github.com/alok4127" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1.5 5 1.5 5 1.5c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 8.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <a class="social-icon" href="mailto:alokramteke.work@gmail.com" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <a class="social-icon" href="tel:+918591622553" aria-label="Phone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-terminal-col">
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-glow"></div>
+          <div class="hero-photo-frame">
+            <img src="assets/profile/profile.jpg" alt="Alok Ramteke" class="hero-photo" />
+          </div>
+        </div>
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="tdot" style="background:#f87171"></span>
+            <span class="tdot" style="background:#fbbf24"></span>
+            <span class="tdot" style="background:#4faf95"></span>
+            <span class="terminal-path">alok@portfolio</span>
+          </div>
+          <div class="terminal-body">
+            <div class="term-line"><span class="term-prompt">Who am I :</span><span class="term-output">Alok Ramteke</span></div>
+            <div class="term-line"><span class="term-prompt">Role :</span><span class="term-output">Aspiring Full-Stack Developer</span></div>
+            <div class="term-line"><span class="term-prompt">Focus :</span><span class="term-output">AI · Software Engineering · Startups</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-wrap">
+    <div class="reveal">
+      <div class="eyebrow">About</div>
+      <h2 class="section-heading">About Me</h2>
+    </div>
+    <div class="two-col">
+      <div class="reveal" style="transition-delay:80ms">
+        <p class="bio-text">
+          I'm a <strong>Computer Science Engineering</strong> student at
+          <strong>SRM Institute of Science and Technology</strong>. My interests
+          span <strong>Full-Stack Development</strong>, <strong>Artificial
+          Intelligence</strong>, <strong>Machine Learning</strong>, databases,
+          product development, and startups.
+          <br /><br />
+          I enjoy solving real-world problems through technology and
+          continuously learning new tools, frameworks, and development
+          practices.
+        </p>
+      </div>
+      <div class="reveal" style="transition-delay:160ms">
+        <div class="code-block">
+          <div class="code-line"><span class="code-kw">const</span> alok = {</div>
+          <div class="code-line">  <span class="code-key">based_at</span><span class="code-punct">: </span><span class="code-string">"SRM Institute of Science and Technology"</span><span class="code-punct">,</span></div>
+          <div class="code-line">  <span class="code-key">studying</span><span class="code-punct">: </span><span class="code-string">"B.Tech, Computer Science Engineering"</span><span class="code-punct">,</span></div>
+          <div class="code-line">  <span class="code-key">focus</span><span class="code-punct">: </span><span class="code-string">["Full-Stack Dev", "AI / ML", "Databases", "Product &amp; Startups"]</span><span class="code-punct">,</span></div>
+          <div class="code-line">  <span class="code-key">currently</span><span class="code-punct">: </span><span class="code-string">"Learning &amp; building, one project at a time"</span></div>
+          <div class="code-line">}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="section-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Journey</div>
+      <h2 class="section-heading">Education &amp; Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-track"></div>
+
+      <div class="reveal" style="transition-delay:0ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Education</span>
+              <span class="timeline-meta">Ongoing</span>
+            </div>
+            <div class="timeline-title">B.Tech, Computer Science Engineering</div>
+            <div class="timeline-org">SRM Institute of Science and Technology</div>
+            <p class="timeline-desc">Pursuing a bachelor's degree in Computer Science Engineering, with coursework spanning data structures, databases, and software systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:90ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Achievement</span>
+              <span class="timeline-meta">Ongoing</span>
+            </div>
+            <div class="timeline-title">Hackathon Participation</div>
+            <div class="timeline-org">Various Hackathons</div>
+            <p class="timeline-desc">Built full-stack and AI-driven prototypes under time constraints, collaborating in teams to ship working products from scratch.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:180ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Program</span>
+              <span class="timeline-meta">Completed</span>
+            </div>
+            <div class="timeline-title">Software Engineering Job Simulation</div>
+            <div class="timeline-org">J.P. Morgan · Forage</div>
+            <p class="timeline-desc">Completed a virtual job simulation covering real-world software engineering tasks, technical design decisions, and structured problem-solving.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:270ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Internship</span>
+              <span class="timeline-meta">Completed</span>
+            </div>
+            <div class="timeline-title">Frontend Developer Intern</div>
+            <div class="timeline-org">IncodeVision</div>
+            <p class="timeline-desc">Contributed to real-world frontend projects — building responsive UI components and interfaces with modern web technologies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:360ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Internship</span>
+              <span class="timeline-meta">Ongoing</span>
+            </div>
+            <div class="timeline-title">Business Development Intern</div>
+            <div class="timeline-org">SpazorLabs</div>
+            <p class="timeline-desc">Working on B2B outreach, prospect research, lead generation, and client engagement — helping technology companies scale their engineering teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Skills</div>
+      <h2 class="section-heading">Technologies I Use</h2>
+    </div>
+
+    <div class="reveal" style="transition-delay:0ms">
+      <div class="skill-group">
+        <div class="skill-label">Languages</div>
+        <div class="skill-cards">
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+            </div>
+            <span class="skill-name">C</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#4FAF951a; color:#4FAF95">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+            </div>
+            <span class="skill-name">C++</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
+            </div>
+            <span class="skill-name">Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:70ms">
+      <div class="skill-group">
+        <div class="skill-label">Web</div>
+        <div class="skill-cards">
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#C97B5E1a; color:#C97B5E">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m5 12-3 3 3 3"/><path d="m9 18 3-3-3-3"/></svg>
+            </div>
+            <span class="skill-name">HTML</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.222 2h-.444a2 2 0 0 0-2 2v.572a2 2 0 0 1-1 1.732l-.443.256a2 2 0 0 1-2 0l-.485-.28a2 2 0 0 0-2.73.73l-.222.383a2 2 0 0 0 .73 2.731l.485.283a2 2 0 0 1 1 1.732v.51a2 2 0 0 1-1 1.732l-.485.284a2 2 0 0 0-.73 2.73l.223.383a2 2 0 0 0 2.73.73l.485-.282a2 2 0 0 1 2 0l.443.256a2 2 0 0 1 1 1.732V20a2 2 0 0 0 2 2h.444a2 2 0 0 0 2-2v-.572a2 2 0 0 1 1-1.732l.443-.256a2 2 0 0 1 2 0l.485.28a2 2 0 0 0 2.73-.73l.222-.383a2 2 0 0 0-.73-2.731l-.485-.283a2 2 0 0 1-1-1.732v-.51a2 2 0 0 1 1-1.732l.485-.284a2 2 0 0 0 .73-2.73l-.223-.383a2 2 0 0 0-2.73-.73l-.485.282a2 2 0 0 1-2 0l-.443-.256a2 2 0 0 1-1-1.732V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <span class="skill-name">CSS</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#C9A85E1a; color:#C9A85E">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+            </div>
+            <span class="skill-name">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:140ms">
+      <div class="skill-group">
+        <div class="skill-label">Data &amp; Databases</div>
+        <div class="skill-cards">
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#4FAF951a; color:#4FAF95">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            </div>
+            <span class="skill-name">SQL</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#4FAF951a; color:#4FAF95">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            </div>
+            <span class="skill-name">MongoDB</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            </div>
+            <span class="skill-name">DBMS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:210ms">
+      <div class="skill-group">
+        <div class="skill-label">Tools &amp; Concepts</div>
+        <div class="skill-cards">
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#C9755E1a; color:#C9755E">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+            </div>
+            <span class="skill-name">Git</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#9B8BC91a; color:#9B8BC9">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+            </div>
+            <span class="skill-name">Machine Learning</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon-wrap" style="background:#C9A85E1a; color:#C9A85E">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"/></svg>
+            </div>
+            <span class="skill-name">Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Projects</div>
+      <h2 class="section-heading">Selected Work</h2>
+    </div>
+    <div>
+
+      <div class="reveal" style="transition-delay:0ms">
+        <div class="project-row">
+          <div class="project-visual">
+    <img src="assets/images/rentomoto.png" alt="RentoMoto" class="project-image">
+</div>
+          <div>
+            <div class="project-index">01 · 2025</div>
+            <div class="project-title">RentoMoto — Two-Wheeler Rental Platform</div>
+            <p class="project-desc">A full-stack desktop rental management application with a layered architecture separating GUI, business logic, and data access. Features an hourly billing engine, a real-time inventory system tracking fleet states, and role-based customer/admin dashboards.</p>
+            <div class="project-tags">
+              <span class="tag-mini">Java</span>
+              <span class="tag-mini">Java Swing</span>
+              <span class="tag-mini">MySQL</span>
+              <span class="tag-mini">JDBC</span>
+              <span class="tag-mini">Maven</span>
+            </div>
+            <div class="project-actions">
+              <span class="project-btn btn-disabled" title="Repository not public">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1.5 5 1.5 5 1.5c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 8.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </span>
+              <span class="project-btn btn-disabled" title="Desktop application">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:90ms">
+        <div class="project-row reverse">
+          <div class="project-visual">
+    <img src="assets/images/student-registration.png" alt="student-registration" class="project-image">
+</div>
+          <div>
+            <div class="project-index">02 · 2025</div>
+            <div class="project-title">Student Registration System</div>
+            <p class="project-desc">A standalone desktop application for managing student records around a normalized relational schema and a dedicated validation layer — full CRUD workflows with duplicate-entry detection and context-aware messaging.</p>
+            <div class="project-tags">
+              <span class="tag-mini">Java</span>
+              <span class="tag-mini">Java Swing</span>
+              <span class="tag-mini">MySQL</span>
+              <span class="tag-mini">JDBC</span>
+            </div>
+            <div class="project-actions">
+              <a class="project-btn" href="https://github.com/alok4127/Student-Registration-System-" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1.5 5 1.5 5 1.5c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 8.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+              <span class="project-btn btn-disabled" title="Desktop application">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:180ms">
+        <div class="project-row">
+          <div class="project-visual">
+    <img src="assets/images/notes-management.png" alt="notes-management" class="project-image">
+</div>
+          <div>
+            <div class="project-index">03 · 2026</div>
+            <div class="project-title">Notes Management System</div>
+            <p class="project-desc">A React application supporting full CRUD workflows, browser-based persistence, and real-time search — built with TypeScript interfaces to enforce data contracts between components.</p>
+            <div class="project-tags">
+              <span class="tag-mini">React</span>
+              <span class="tag-mini">TypeScript</span>
+              <span class="tag-mini">Tailwind CSS</span>
+            </div>
+            <div class="project-actions">
+              <a class="project-btn" href="https://github.com/alok4127/notes-management-system" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1.5 5 1.5 5 1.5c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 8.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+              <span class="project-btn btn-disabled" title="Add your live demo link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:270ms">
+        <div class="project-row reverse">
+          <div class="project-visual">
+    <img src="assets/images/calculator.png" alt="Calculator" class="project-image">
+</div>
+          <div>
+            <div class="project-index">04 · 2026</div>
+            <div class="project-title">Calculator</div>
+            <p class="project-desc">A calculator application built to practice clean UI logic and precise computation handling.</p>
+            <div class="project-tags">
+              <span class="tag-mini">JavaScript</span>
+            </div>
+            <div class="project-actions">
+              <a class="project-btn" href="https://github.com/alok4127/Calculator" target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1.5 5 1.5 5 1.5c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 8.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                GitHub
+              </a>
+              <span class="project-btn btn-disabled" title="Add your live demo link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Live Demo
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="reveal" style="transition-delay:200ms">
+      <div class="projects-cta">
+        <a class="btn btn-secondary" href="https://github.com/alok4127" target="_blank" rel="noreferrer">
+          More on GitHub
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 class="section-heading">Let's Connect</h2>
+    </div>
+    <div class="reveal" style="transition-delay:80ms">
+      <div class="contact-card">
+        <div class="contact-cmd">
+          <div class="contact-cmd-line">email : <span class="accent">alokramteke.work@gmail.com</span></div>
+          <div class="contact-cmd-line">phone no. : <span class="accent">+91 8591622553</span></div>
+        </div>
+        <div class="contact-links">
+          <button class="contact-btn" id="copyEmailBtn">
+            <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <svg id="checkIcon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span id="copyLabel">Copy Email</span>
+          </button>
+          <a class="contact-btn" href="mailto:alokramteke.work@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a class="contact-btn" href="tel:+918591622553">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            +91 8591622553
+          </a>
+          <a class="contact-btn" href="https://www.linkedin.com/in/alok-ramteke-921401345/" target="_blank" rel="noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="contact-btn" href="https://github.com/alok4127" target="_blank" rel="noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 1.5 5 1.5 5 1.5c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 8.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">© 2026 Alok Ramteke — Portfolio</footer>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+  </button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
