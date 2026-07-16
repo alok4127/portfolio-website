@@ -4,6 +4,26 @@
 --------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* --- theme toggle (dark default, light on request) --- */
+  const themeToggleBtn = document.getElementById("themeToggleBtn");
+  const root = document.documentElement;
+  const storedTheme = localStorage.getItem("portfolio-theme");
+  if (storedTheme === "light") {
+    root.setAttribute("data-theme", "light");
+  }
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const isLight = root.getAttribute("data-theme") === "light";
+      if (isLight) {
+        root.removeAttribute("data-theme");
+        localStorage.setItem("portfolio-theme", "dark");
+      } else {
+        root.setAttribute("data-theme", "light");
+        localStorage.setItem("portfolio-theme", "light");
+      }
+    });
+  }
+
   const NAV_IDS = ["home", "about", "timeline", "skills", "projects", "contact"];
 
   const navLinks = document.querySelectorAll(".nav-link");
@@ -87,6 +107,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener("scroll", onScroll);
   onScroll();
+
+  /* --- scroll progress bar --- */
+  const scrollProgressBar = document.getElementById("scrollProgressBar");
+  function onScrollProgress() {
+    if (!scrollProgressBar) return;
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgressBar.style.width = pct + "%";
+  }
+  window.addEventListener("scroll", onScrollProgress);
+  onScrollProgress();
+
+  /* --- animated stat counters --- */
+  function easeOutQuad(t) { return 1 - (1 - t) * (1 - t); }
+
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+    const duration = 1400;
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutQuad(progress);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const statObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  document.querySelectorAll(".stat-number").forEach((el) => {
+    statObserver.observe(el);
+  });
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => {

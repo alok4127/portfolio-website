@@ -6,18 +6,27 @@
 <title>Alok Ramteke — Portfolio</title>
 <link rel="icon" href="favicon.ico" />
 <link rel="stylesheet" href="style.css" />
+<script>
+  (function() {
+    try {
+      if (localStorage.getItem("portfolio-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
 <div class="portfolio-root">
 
+  <div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
   <div class="bg-grid"></div>
   <div class="hero-glow"></div>
 
   <!-- NAV -->
   <header class="navbar">
     <div class="navbar-inner">
-      <button class="logo" data-scroll="home">Alok</button>
       <nav class="nav-links">
         <button class="nav-link" data-scroll="home">Home</button>
         <button class="nav-link" data-scroll="about">About</button>
@@ -26,7 +35,13 @@
         <button class="nav-link" data-scroll="projects">Projects</button>
         <button class="nav-link" data-scroll="contact">Contact</button>
       </nav>
-      <button class="nav-mobile-btn" id="navMobileBtn">Menu</button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button class="nav-mobile-btn" id="navMobileBtn">Menu</button>
+      </div>
     </div>
     <div id="navMobileMenu" style="display:none; border-top:1px solid var(--border); background: var(--bg-secondary);">
       <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="home">Home</button>
@@ -55,6 +70,10 @@
             View Projects
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </button>
+          <a class="btn btn-secondary" href="assets/resume/AlokRamteke_Resume.pdf" download>
+            Download Resume
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M6 15v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+          </a>
           <button class="btn btn-secondary" data-scroll="contact">Contact Me</button>
         </div>
 
@@ -131,6 +150,30 @@
     </div>
   </section>
 
+  <!-- STATS -->
+  <div id="stats" class="section-wrap stats-wrap">
+    <div class="reveal">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-count-to="4">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count-to="2">0</div>
+          <div class="stat-label">Internships</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count-to="12">0</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count-to="3">0</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- TIMELINE -->
   <section id="timeline" class="section-wrap">
     <div class="reveal">
@@ -194,6 +237,40 @@
       <div class="reveal" style="transition-delay:270ms">
         <div class="timeline-item">
           <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Program</span>
+              <span class="timeline-meta">Completed</span>
+            </div>
+            <div class="timeline-title">Data Analytics Job Simulation</div>
+            <div class="timeline-org">Deloitte · Forage</div>
+            <p class="timeline-desc">Completed a virtual job simulation covering data analysis and forensic technology tasks for a professional services firm.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:360ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-top">
+              <span class="timeline-type">Program</span>
+              <span class="timeline-meta">Completed</span>
+            </div>
+            <div class="timeline-title">Introduction to Cybersecurity Job Simulation</div>
+            <div class="timeline-org">Commonwealth Bank · Forage</div>
+            <p class="timeline-desc">Completed a virtual job simulation covering data analysis, incident response, security awareness, and penetration testing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay:450ms">
+        <div class="timeline-item">
+          <div class="timeline-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
           </div>
           <div class="timeline-body">
@@ -201,14 +278,14 @@
               <span class="timeline-type">Internship</span>
               <span class="timeline-meta">Completed</span>
             </div>
-            <div class="timeline-title">Frontend Developer Intern</div>
+            <div class="timeline-title">Full-Stack Developer Intern</div>
             <div class="timeline-org">IncodeVision</div>
-            <p class="timeline-desc">Contributed to real-world frontend projects — building responsive UI components and interfaces with modern web technologies.</p>
+            <p class="timeline-desc">Contributed to real-world full-stack projects — building responsive UI components and end-to-end features with modern web technologies.</p>
           </div>
         </div>
       </div>
 
-      <div class="reveal" style="transition-delay:360ms">
+      <div class="reveal" style="transition-delay:540ms">
         <div class="timeline-item">
           <div class="timeline-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
