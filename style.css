@@ -4,7 +4,7 @@
         html, body {
           margin: 0;
           padding: 0;
-          background: #0A1626;
+          background: #0D1F38;
         }
 
         .portfolio-root {
@@ -59,7 +59,7 @@ radial-gradient(circle at 94% 12%, var(--glow-2) 0%, transparent 30%),
 radial-gradient(circle at 12% 92%, var(--glow-3) 0%, transparent 26%),
 radial-gradient(circle at 90% 88%, var(--glow-4) 0%, transparent 28%),
 radial-gradient(circle at 50% -8%, var(--glow-5) 0%, transparent 42%),
-linear-gradient(180deg,var(--bg) 0%,var(--bg-secondary) 100%);
+var(--bg-secondary);
           color: var(--text);
           font-family: var(--font-body);
           min-height: 100vh;
@@ -157,9 +157,6 @@ z-index:0;
 
         section.section-wrap:nth-of-type(even) {
           max-width: 100%;
-          background: var(--bg-secondary);
-          border-top: 1px solid var(--border);
-          border-bottom: 1px solid var(--border);
         }
         section.section-wrap:nth-of-type(even) > * {
           max-width: 1120px;
