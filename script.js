@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const NAV_IDS = ["home", "about", "timeline", "skills", "projects", "contact"];
+  const NAV_IDS = ["home", "about", "timeline", "skills", "resume", "projects", "contact"];
 
   const navLinks = document.querySelectorAll(".nav-link");
   const navMobileBtn = document.getElementById("navMobileBtn");
@@ -157,6 +157,64 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".stat-number").forEach((el) => {
     statObserver.observe(el);
   });
+
+  /* --- animated skill proficiency bars --- */
+  const skillBarObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("filled");
+          skillBarObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  document.querySelectorAll(".skill-bar-fill").forEach((el) => {
+    skillBarObserver.observe(el);
+  });
+
+  /* --- skill category filters --- */
+  const skillFilterBtns = document.querySelectorAll(".skill-filter-btn");
+  const skillGroupWraps = document.querySelectorAll(".skill-group-wrap");
+
+  skillFilterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+
+      skillFilterBtns.forEach((b) => b.classList.toggle("active", b === btn));
+
+      skillGroupWraps.forEach((wrap) => {
+        const matches = filter === "all" || wrap.getAttribute("data-category") === filter;
+        wrap.classList.toggle("filtering-out", !matches);
+      });
+    });
+  });
+
+  /* --- resume file meta (live size / last-updated, via HEAD request) --- */
+  async function loadResumeMeta() {
+    const sizeEl = document.getElementById("resumeFileSize");
+    const dateEl = document.getElementById("resumeUpdatedDate");
+    if (!sizeEl && !dateEl) return;
+    try {
+      const res = await fetch("assets/resume/AlokRamteke_Resume.pdf", { method: "HEAD" });
+      const bytes = res.headers.get("content-length");
+      const lastModified = res.headers.get("last-modified");
+      if (bytes && sizeEl) {
+        sizeEl.textContent = Math.max(1, Math.round(parseInt(bytes, 10) / 1024)) + " KB";
+      }
+      if (lastModified && dateEl) {
+        const d = new Date(lastModified);
+        if (!isNaN(d.getTime())) {
+          dateEl.textContent = d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+        }
+      }
+    } catch (e) {
+      /* leave the static fallback text in place (e.g. opened via file://) */
+    }
+  }
+  loadResumeMeta();
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => {

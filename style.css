@@ -678,14 +678,35 @@ z-index:0;
           letter-spacing: 0.05em;
           margin-bottom: 18px;
         }
-        .skill-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+        .skill-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+        .skill-filter-btn {
+          font-family: var(--font-body);
+          font-size: 13px;
+          font-weight: 600;
+          padding: 8px 18px;
+          border-radius: 999px;
+          border: 1px solid var(--border-strong);
+          background: var(--tint);
+          color: var(--text-muted);
+          cursor: pointer;
+          transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+        }
+        .skill-filter-btn:hover { color: var(--text); border-color: var(--accent-border); background: var(--accent-soft); }
+        .skill-filter-btn.active {
+          background: var(--accent);
+          color: #ffffff;
+          border-color: var(--accent);
+          box-shadow: 0 4px 16px color-mix(in srgb, var(--accent) 20%, transparent);
+        }
+        .skill-group-wrap.filtering-out { display: none; }
+        .skill-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
         .skill-card {
           background: var(--card-light);
           backdrop-filter: blur(20px) saturate(180%);
           -webkit-backdrop-filter: blur(20px) saturate(180%);
           border: 1px solid var(--card-light-border);
           border-radius: 14px;
-          padding: 20px;
+          padding: 18px 20px;
           display: flex;
           align-items: center;
           gap: 14px;
@@ -706,7 +727,68 @@ z-index:0;
           transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
         }
         .skill-card:hover .skill-icon-wrap { transform: scale(1.1); }
+        .skill-info { flex: 1; min-width: 0; }
+        .skill-name-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
         .skill-name { font-size: 14px; font-weight: 500; color: var(--text-on-light); }
+        .skill-percent { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--text-on-light-dim); flex-shrink: 0; }
+        .skill-bar-track {
+          width: 100%;
+          height: 5px;
+          border-radius: 999px;
+          background: var(--card-light-border);
+          overflow: hidden;
+        }
+        .skill-bar-fill {
+          height: 100%;
+          width: 0%;
+          border-radius: 999px;
+          background: linear-gradient(90deg, var(--accent-on-light), var(--steel-on-light));
+          transition: width 1.1s cubic-bezier(0.16,1,0.3,1);
+        }
+        .skill-bar-fill.filled { width: var(--level); }
+
+        /* ---------- RESUME ---------- */
+        .resume-card {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 20px;
+          background: var(--card-light);
+          backdrop-filter: blur(20px) saturate(180%);
+          -webkit-backdrop-filter: blur(20px) saturate(180%);
+          border: 1px solid var(--card-light-border);
+          border-radius: 16px;
+          padding: 26px 28px;
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+        }
+        .resume-card-main { display: flex; align-items: center; gap: 16px; min-width: 0; }
+        .resume-file-icon {
+          width: 46px; height: 46px;
+          border-radius: 12px;
+          flex-shrink: 0;
+          display: flex; align-items: center; justify-content: center;
+          background: var(--accent-soft);
+          color: var(--accent-on-light);
+        }
+        .resume-file-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--text-on-light); margin-bottom: 4px; }
+        .resume-file-meta { font-family: var(--font-mono); font-size: 12.5px; color: var(--text-on-light-dim); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .resume-meta-dot { opacity: 0.6; }
+        .resume-card-actions { display: flex; gap: 12px; flex-shrink: 0; }
+        .resume-block-label {
+          font-family: var(--font-body);
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--text-dim);
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 14px;
+        }
+        @media (max-width: 560px) {
+          .resume-card { flex-direction: column; align-items: stretch; }
+          .resume-card-actions { justify-content: stretch; }
+          .resume-card-actions .btn { flex: 1; justify-content: center; }
+        }
 
         /* ---------- PROJECTS ---------- */
        .project-row {
