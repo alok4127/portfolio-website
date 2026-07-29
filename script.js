@@ -216,6 +216,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   loadResumeMeta();
 
+  /* --- contact form submission (Formspree) --- */
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    const submitBtn = document.getElementById("contactSubmitBtn");
+    const submitLabel = document.getElementById("contactSubmitLabel");
+    const statusEl = document.getElementById("contactFormStatus");
+
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const action = contactForm.getAttribute("action") || "";
+      if (!action || action.includes("YOUR_FORM_ID")) {
+        statusEl.textContent = "Form isn't connected yet — email me directly instead using the buttons above.";
+        statusEl.className = "contact-form-status error";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitLabel.textContent = "Sending...";
+      statusEl.textContent = "";
+      statusEl.className = "contact-form-status";
+
+      try {
+        const res = await fetch(action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(contactForm),
+        });
+
+        if (res.ok) {
+          statusEl.textContent = "Thanks! Your message has been sent — I'll get back to you soon.";
+          statusEl.className = "contact-form-status success";
+          contactForm.reset();
+        } else {
+          statusEl.textContent = "Something went wrong sending that. Please try the email button above instead.";
+          statusEl.className = "contact-form-status error";
+        }
+      } catch (err) {
+        statusEl.textContent = "Network error — please try the email button above instead.";
+        statusEl.className = "contact-form-status error";
+      } finally {
+        submitBtn.disabled = false;
+        submitLabel.textContent = "Send Message";
+      }
+    });
+  }
+
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
