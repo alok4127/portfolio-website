@@ -314,10 +314,7 @@ z-index:0;
           z-index: 1;
           max-width: 1120px;
           margin: 0 auto;
-          padding: 180px 32px 120px;
-          min-height: 92vh;
-          display: flex;
-          align-items: center;
+          padding: 96px 32px 56px;
         }
         .hero-grid {
           display: grid;
@@ -426,8 +423,8 @@ z-index:0;
         /* ---------- HERO PHOTO ---------- */
         .hero-photo-wrap {
           position: relative;
-          width: clamp(260px, 30vw, 460px);
-          margin: 0 auto 32px;
+          width: clamp(190px, 20vw, 280px);
+          margin: 0 auto 20px;
         }
         .hero-photo-glow {
           position: absolute;
@@ -436,6 +433,27 @@ z-index:0;
           filter: blur(28px);
           z-index: 0;
           pointer-events: none;
+        }
+        .hero-bg-word {
+          position: absolute;
+          left: 50%;
+          top: 46%;
+          transform: translate(-50%, -50%);
+          font-family: var(--font-display);
+          font-weight: 800;
+          font-size: clamp(70px, 12vw, 160px);
+          letter-spacing: -0.03em;
+          line-height: 1;
+          color: transparent;
+          -webkit-text-stroke: 1.5px color-mix(in srgb, var(--steel) 55%, transparent);
+          opacity: 0.55;
+          white-space: nowrap;
+          z-index: -1;
+          pointer-events: none;
+          user-select: none;
+        }
+        @media (max-width: 900px) {
+          .hero-bg-word { font-size: clamp(56px, 20vw, 100px); }
         }
         .hero-photo-frame {
           position: relative;
@@ -487,10 +505,10 @@ z-index:0;
           margin-left: 6px;
         }
         .terminal-body {
-          padding: 26px 24px;
+          padding: 18px 20px;
           font-family: var(--font-mono);
-          font-size: 13.5px;
-          line-height: 2.1;
+          font-size: 13px;
+          line-height: 1.85;
         }
         .term-line { margin-bottom: 6px; }
         .term-prompt { color: var(--text-on-light-dim); margin-right: 8px; }
@@ -594,6 +612,7 @@ z-index:0;
 
         /* ---------- TIMELINE ---------- */
         .timeline { position: relative; padding-left: 8px; }
+        .timeline-items { position: relative; margin-top: 48px; }
         .timeline-track {
           position: absolute;
           left: 27px;
@@ -601,6 +620,17 @@ z-index:0;
           bottom: 8px;
           width: 1.5px;
           background: linear-gradient(to bottom, var(--steel-border), var(--border), transparent);
+        }
+        .timeline-track-fill {
+          position: absolute;
+          left: 27px;
+          top: 8px;
+          bottom: 8px;
+          width: 1.5px;
+          background: var(--accent);
+          transform-origin: top;
+          transform: scaleY(0);
+          z-index: 0;
         }
         .timeline-item {
           position: relative;
@@ -1081,6 +1111,96 @@ z-index:0;
         @media (max-width: 600px) {
           .section-wrap, .hero { padding-left: 20px; padding-right: 20px; }
           .contact-card { padding: 36px 24px; }
-          .timeline-track { left: 27px; }
+          .timeline-track, .timeline-track-fill { left: 27px; }
+        }
+
+        /* ---------- LOADING SCREEN ---------- */
+        html.is-loading, html.is-loading body { overflow: hidden; height: 100%; }
+
+        .loading-screen {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--bg);
+          transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), visibility 0.6s;
+        }
+        .loading-screen.loading-hidden {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .loader-inner {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 260px;
+          min-height: 120px;
+        }
+
+        .loader-counter {
+          position: absolute;
+          font-family: var(--font-display);
+          font-weight: 800;
+          font-size: clamp(48px, 10vw, 110px);
+          color: var(--accent);
+          text-shadow: 0 0 50px color-mix(in srgb, var(--accent) 55%, transparent);
+          line-height: 1;
+          transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1);
+        }
+        .loader-counter.hide {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+
+        .loader-mark {
+          position: absolute;
+          display: flex;
+          align-items: baseline;
+          font-family: var(--font-display);
+          font-weight: 800;
+          font-size: clamp(48px, 9vw, 100px);
+          letter-spacing: -0.02em;
+          color: var(--text);
+          line-height: 1;
+          opacity: 0;
+          transform: scale(0.92);
+          transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);
+        }
+        .loader-mark.show {
+          opacity: 1;
+          transform: scale(1);
+        }
+        .loader-letter {
+          opacity: 0;
+          transform: translateY(14px);
+          line-height: 1;
+          transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1);
+        }
+        .loader-mark.show .loader-letter { opacity: 1; transform: translateY(0); }
+
+        .loader-L-letter { position: relative; }
+        .loader-L-foot {
+          position: absolute;
+          left: 0.05em;
+          bottom: -0.1em;
+          width: 0;
+          height: 0.1em;
+          background: var(--accent);
+          border-radius: 1px;
+          transition: width 0.85s cubic-bezier(0.65,0,0.35,1);
+        }
+        .loader-L-foot.grow { width: 0.55em; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .loading-screen { transition: opacity 0.2s linear; }
+          .loader-counter { display: none; }
+          .loader-mark { transition: none; opacity: 1; transform: none; }
+          .loader-letter { transition: none; opacity: 1; transform: none; }
+          .loader-L-foot { transition: none; width: 0.55em; }
         }
       
