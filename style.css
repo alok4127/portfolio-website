@@ -611,8 +611,8 @@ z-index:0;
         }
 
         /* ---------- TIMELINE ---------- */
-        .timeline { position: relative; padding-left: 8px; }
-        .timeline-items { position: relative; margin-top: 48px; }
+        .timeline { padding-left: 8px; }
+        .timeline-items { position: relative; }
         .timeline-track {
           position: absolute;
           left: 27px;
