@@ -25,7 +25,6 @@
 
 <div id="loadingScreen" class="loading-screen" aria-hidden="true">
   <div class="loader-inner">
-    <div class="loader-counter" id="loaderCounter">1</div>
     <div class="loader-mark" id="loaderMark">
       <span class="loader-letter">A</span>
       <span class="loader-letter loader-L-letter">L<span class="loader-L-foot"></span></span>
@@ -43,6 +42,7 @@
   <!-- NAV -->
   <header class="navbar">
     <div class="navbar-inner">
+      <div class="nav-brand" id="navBrand" data-scroll="home">ALOK RAMTEKE</div>
       <nav class="nav-links">
         <button class="nav-link" data-scroll="home">Home</button>
         <button class="nav-link" data-scroll="about">About</button>
@@ -57,7 +57,7 @@
           <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
           <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
         </button>
-        <button class="nav-mobile-btn" id="navMobileBtn">Menu</button>
+        <button class="nav-mobile-btn" id="navMobileBtn" aria-expanded="false" aria-controls="navMobileMenu">Menu</button>
       </div>
     </div>
     <div id="navMobileMenu" style="display:none; border-top:1px solid var(--border); background: var(--bg-secondary);">
@@ -70,6 +70,8 @@
       <button class="nav-link" style="width:100%; text-align:left; padding:14px 24px; border-radius:0;" data-scroll="contact">Contact</button>
     </div>
   </header>
+
+  <main>
 
   <!-- HERO -->
   <section id="home" class="hero">
@@ -113,26 +115,16 @@
 
       <div class="hero-terminal-col">
         <div class="hero-photo-wrap">
-          <span class="hero-bg-word" aria-hidden="true">CODE</span>
           <div class="hero-photo-glow"></div>
           <div class="hero-photo-frame">
             <img src="assets/profile/profile.jpg" alt="Alok Ramteke" class="hero-photo" />
           </div>
         </div>
-        <div class="terminal">
-          <div class="terminal-header">
-            <span class="tdot" style="background:#f87171"></span>
-            <span class="tdot" style="background:#fbbf24"></span>
-            <span class="tdot" style="background:#4faf95"></span>
-            <span class="terminal-path">alok@portfolio</span>
-          </div>
-          <div class="terminal-body">
-            <div class="term-line"><span class="term-prompt">Who am I :</span><span class="term-output">Alok Ramteke</span></div>
-            <div class="term-line"><span class="term-prompt">Role :</span><span class="term-output">Aspiring Full-Stack Developer</span></div>
-            <div class="term-line"><span class="term-prompt">Focus :</span><span class="term-output">AI · Software Engineering · Startups</span></div>
-            <div class="term-line"><span class="term-prompt">Local Time :</span><span class="term-output" id="liveClock">--:--:-- IST</span></div>
-            <div class="term-line"><span class="term-prompt">Status :</span><span class="term-output"><span class="status-dot"></span>Available for opportunities</span></div>
-          </div>
+        <div class="facts-panel">
+          <div class="fact-row"><span class="fact-label">Role</span><span class="fact-value">Aspiring Full-Stack Developer</span></div>
+          <div class="fact-row"><span class="fact-label">Focus</span><span class="fact-value">AI · Software Engineering · Startups</span></div>
+          <div class="fact-row"><span class="fact-label">Local Time</span><span class="fact-value" id="liveClock">--:--:-- IST</span></div>
+          <div class="fact-row"><span class="fact-label">Status</span><span class="fact-value"><span class="status-dot"></span>Available for opportunities</span></div>
         </div>
       </div>
     </div>
@@ -159,13 +151,11 @@
         </p>
       </div>
       <div class="reveal" style="transition-delay:160ms">
-        <div class="code-block">
-          <div class="code-line"><span class="code-kw">const</span> alok = {</div>
-          <div class="code-line">  <span class="code-key">based_at</span><span class="code-punct">: </span><span class="code-string">"SRM Institute of Science and Technology"</span><span class="code-punct">,</span></div>
-          <div class="code-line">  <span class="code-key">studying</span><span class="code-punct">: </span><span class="code-string">"B.Tech, Computer Science Engineering"</span><span class="code-punct">,</span></div>
-          <div class="code-line">  <span class="code-key">focus</span><span class="code-punct">: </span><span class="code-string">["Full-Stack Dev", "AI / ML", "Databases", "Product &amp; Startups"]</span><span class="code-punct">,</span></div>
-          <div class="code-line">  <span class="code-key">currently</span><span class="code-punct">: </span><span class="code-string">"Learning &amp; building, one project at a time"</span></div>
-          <div class="code-line">}</div>
+        <div class="facts-panel">
+          <div class="fact-row"><span class="fact-label">Based At</span><span class="fact-value">SRM Institute of Science and Technology</span></div>
+          <div class="fact-row"><span class="fact-label">Studying</span><span class="fact-value">B.Tech, Computer Science Engineering</span></div>
+          <div class="fact-row"><span class="fact-label">Focus</span><span class="fact-value">Full-Stack Dev · AI/ML · Databases · Product &amp; Startups</span></div>
+          <div class="fact-row"><span class="fact-label">Currently</span><span class="fact-value">Learning &amp; building, one project at a time</span></div>
         </div>
       </div>
     </div>
@@ -174,20 +164,20 @@
   <!-- STATS -->
   <div id="stats" class="section-wrap stats-wrap">
     <div class="reveal">
-      <div class="stats-grid">
-        <div class="stat-card">
+      <div class="stats-row">
+        <div class="stat-item">
           <div class="stat-number" data-count-to="4">0</div>
           <div class="stat-label">Projects Completed</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-item">
           <div class="stat-number" data-count-to="2">0</div>
           <div class="stat-label">Internships</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-item">
           <div class="stat-number" data-count-to="12">0</div>
           <div class="stat-label">Technologies</div>
         </div>
-        <div class="stat-card">
+        <div class="stat-item">
           <div class="stat-number" data-count-to="3">0</div>
           <div class="stat-label">Certifications</div>
         </div>
@@ -203,12 +193,11 @@
 
       <div class="timeline-items">
       <div class="timeline-track"></div>
-      <div class="timeline-track-fill" aria-hidden="true"></div>
 
       <div class="reveal" style="transition-delay:0ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -225,7 +214,7 @@
       <div class="reveal" style="transition-delay:90ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -242,7 +231,7 @@
       <div class="reveal" style="transition-delay:180ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -259,7 +248,7 @@
       <div class="reveal" style="transition-delay:270ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -276,7 +265,7 @@
       <div class="reveal" style="transition-delay:360ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -293,7 +282,7 @@
       <div class="reveal" style="transition-delay:450ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -310,7 +299,7 @@
       <div class="reveal" style="transition-delay:540ms">
         <div class="timeline-item">
           <div class="timeline-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
           </div>
           <div class="timeline-body">
             <div class="timeline-top">
@@ -346,7 +335,7 @@
         <div class="skill-label">Languages</div>
         <div class="skill-cards">
           <div class="skill-card" data-level="75">
-            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
             </div>
             <div class="skill-info">
@@ -358,7 +347,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="78">
-            <div class="skill-icon-wrap" style="background:#4FAF951a; color:#4FAF95">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
             </div>
             <div class="skill-info">
@@ -370,7 +359,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="88">
-            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
             </div>
             <div class="skill-info">
@@ -390,7 +379,7 @@
         <div class="skill-label">Web</div>
         <div class="skill-cards">
           <div class="skill-card" data-level="90">
-            <div class="skill-icon-wrap" style="background:#C97B5E1a; color:#C97B5E">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m5 12-3 3 3 3"/><path d="m9 18 3-3-3-3"/></svg>
             </div>
             <div class="skill-info">
@@ -402,7 +391,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="85">
-            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.222 2h-.444a2 2 0 0 0-2 2v.572a2 2 0 0 1-1 1.732l-.443.256a2 2 0 0 1-2 0l-.485-.28a2 2 0 0 0-2.73.73l-.222.383a2 2 0 0 0 .73 2.731l.485.283a2 2 0 0 1 1 1.732v.51a2 2 0 0 1-1 1.732l-.485.284a2 2 0 0 0-.73 2.73l.223.383a2 2 0 0 0 2.73.73l.485-.282a2 2 0 0 1 2 0l.443.256a2 2 0 0 1 1 1.732V20a2 2 0 0 0 2 2h.444a2 2 0 0 0 2-2v-.572a2 2 0 0 1 1-1.732l.443-.256a2 2 0 0 1 2 0l.485.28a2 2 0 0 0 2.73-.73l.222-.383a2 2 0 0 0-.73-2.731l-.485-.283a2 2 0 0 1-1-1.732v-.51a2 2 0 0 1 1-1.732l.485-.284a2 2 0 0 0 .73-2.73l-.223-.383a2 2 0 0 0-2.73-.73l-.485.282a2 2 0 0 1-2 0l-.443-.256a2 2 0 0 1-1-1.732V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
             </div>
             <div class="skill-info">
@@ -414,7 +403,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="82">
-            <div class="skill-icon-wrap" style="background:#C9A85E1a; color:#C9A85E">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
             </div>
             <div class="skill-info">
@@ -434,7 +423,7 @@
         <div class="skill-label">Data &amp; Databases</div>
         <div class="skill-cards">
           <div class="skill-card" data-level="80">
-            <div class="skill-icon-wrap" style="background:#4FAF951a; color:#4FAF95">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
             </div>
             <div class="skill-info">
@@ -446,7 +435,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="72">
-            <div class="skill-icon-wrap" style="background:#4FAF951a; color:#4FAF95">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
             </div>
             <div class="skill-info">
@@ -458,7 +447,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="78">
-            <div class="skill-icon-wrap" style="background:#6B8BB81a; color:#6B8BB8">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
             </div>
             <div class="skill-info">
@@ -478,7 +467,7 @@
         <div class="skill-label">Tools &amp; Concepts</div>
         <div class="skill-cards">
           <div class="skill-card" data-level="85">
-            <div class="skill-icon-wrap" style="background:#C9755E1a; color:#C9755E">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
             </div>
             <div class="skill-info">
@@ -490,7 +479,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="70">
-            <div class="skill-icon-wrap" style="background:#9B8BC91a; color:#9B8BC9">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
             </div>
             <div class="skill-info">
@@ -502,7 +491,7 @@
             </div>
           </div>
           <div class="skill-card" data-level="92">
-            <div class="skill-icon-wrap" style="background:#C9A85E1a; color:#C9A85E">
+            <div class="skill-icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.61a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 1 0 3.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0 1 12 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02Z"/></svg>
             </div>
             <div class="skill-info">
@@ -591,8 +580,9 @@
           <div class="project-visual">
     <img
     src="assets/images/Rentomoto.png"
-    alt="RentoMoto"
+    alt="Screenshot of the RentoMoto two-wheeler rental platform interface"
     class="project-image"
+    loading="lazy"
 />
 </div>
           <div>
@@ -628,7 +618,7 @@
       <div class="reveal" style="transition-delay:90ms">
         <div class="project-row reverse">
           <div class="project-visual">
-    <img src="assets/images/student-registration.png" alt="student-registration" class="project-image">
+    <img src="assets/images/student-registration.png" alt="Screenshot of the Student Registration System application interface" class="project-image" loading="lazy">
 </div>
           <div>
             <div class="project-index">02 · 2025</div>
@@ -662,7 +652,7 @@
       <div class="reveal" style="transition-delay:180ms">
         <div class="project-row">
           <div class="project-visual">
-    <img src="assets/images/notes-management.png" alt="notes-management" class="project-image">
+    <img src="assets/images/notes-management.png" alt="Screenshot of the Notes Management System application interface" class="project-image" loading="lazy">
 </div>
           <div>
             <div class="project-index">03 · 2026</div>
@@ -697,8 +687,9 @@
           <div class="project-visual">
    <img
     src="assets/images/Calculator.png"
-    alt="Calculator"
+    alt="Screenshot of the Calculator application interface"
     class="project-image"
+    loading="lazy"
 />
 </div>
           <div>
@@ -806,6 +797,8 @@
     </div>
   </section>
 
+  </main>
+
   <footer class="footer">© 2026 Alok Ramteke — Portfolio</footer>
 
   <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
@@ -817,9 +810,6 @@
 <script src="loading-screen.js"></script>
 <script src="scroll-fx.js"></script>
 <script src="fx-hero.js"></script>
-<script src="fx-timeline.js"></script>
-<script src="fx-skills.js"></script>
-<script src="fx-projects.js"></script>
 <script src="script.js"></script>
 <script>
   (function() {

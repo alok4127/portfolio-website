@@ -25,8 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const NAV_IDS = ["home", "about", "timeline", "skills", "resume", "projects", "contact"];
+  const NAV_BRAND_LABELS = {
+    home: "ALOK RAMTEKE",
+    about: "ABOUT",
+    timeline: "EXPERIENCE",
+    skills: "SKILLS",
+    resume: "RESUME",
+    projects: "PROJECTS",
+    contact: "CONTACT",
+  };
 
   const navLinks = document.querySelectorAll(".nav-link");
+  const navBrand = document.getElementById("navBrand");
   const navMobileBtn = document.getElementById("navMobileBtn");
   const navMobileMenu = document.getElementById("navMobileMenu");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -42,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
     if (navMobileMenu) navMobileMenu.style.display = "none";
+    if (navMobileBtn) navMobileBtn.setAttribute("aria-expanded", "false");
   }
 
   document.querySelectorAll("[data-scroll]").forEach((btn) => {
@@ -56,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navMobileBtn.addEventListener("click", () => {
       const isOpen = navMobileMenu.style.display === "block";
       navMobileMenu.style.display = isOpen ? "none" : "block";
+      navMobileBtn.setAttribute("aria-expanded", isOpen ? "false" : "true");
     });
   }
 
@@ -69,6 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const linkId = link.getAttribute("data-scroll");
             link.classList.toggle("active", linkId === id);
           });
+          if (navBrand && NAV_BRAND_LABELS[id] && navBrand.textContent !== NAV_BRAND_LABELS[id]) {
+            navBrand.classList.add("is-swapping");
+            setTimeout(() => {
+              navBrand.textContent = NAV_BRAND_LABELS[id];
+              navBrand.classList.remove("is-swapping");
+            }, 150);
+          }
         }
       });
     },
@@ -97,28 +116,36 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 
-  /* --- scroll-to-top button visibility --- */
-  function onScroll() {
+  /* --- scroll-to-top button visibility + scroll progress bar ---
+     Combined into one rAF-throttled handler (was two separate,
+     unthrottled scroll listeners each doing synchronous DOM writes
+     on every scroll event) and marked passive so the browser isn't
+     blocked from scrolling while the handler runs. --- */
+  const scrollProgressBar = document.getElementById("scrollProgressBar");
+  let scrollTicking = false;
+
+  function updateOnScroll() {
     if (window.scrollY > 500) {
       scrollTopBtn.classList.add("show");
     } else {
       scrollTopBtn.classList.remove("show");
     }
+    if (scrollProgressBar) {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgressBar.style.width = pct + "%";
+    }
+    scrollTicking = false;
   }
-  window.addEventListener("scroll", onScroll);
-  onScroll();
 
-  /* --- scroll progress bar --- */
-  const scrollProgressBar = document.getElementById("scrollProgressBar");
-  function onScrollProgress() {
-    if (!scrollProgressBar) return;
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    scrollProgressBar.style.width = pct + "%";
-  }
-  window.addEventListener("scroll", onScrollProgress);
-  onScrollProgress();
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      requestAnimationFrame(updateOnScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+  updateOnScroll();
 
   /* --- animated stat counters --- */
   function easeOutQuad(t) { return 1 - (1 - t) * (1 - t); }
